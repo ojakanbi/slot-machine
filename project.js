@@ -13,16 +13,13 @@ const prompt = require("prompt-sync") (); // the "()" after gives access to the 
 
 
 
-const ROWS = 3;
-const COLS = 3;
-
+// These constants define the number of rows and columns in the slot machine and the count and values associated with each symbol.
 const SYMBOLS_COUNT = {    
     "A": 2,
     "B": 4,     //keys map with different values SYMBOLS_COUNT["A"] --> 2
     "C": 6,
     "D": 8,
 } 
-
 
 const SYMBOLS_VALUES = {
     "A": 5,
@@ -32,7 +29,7 @@ const SYMBOLS_VALUES = {
 
 }
 
-
+//This function prompts the user to enter a deposit amount and validates if it is a valid positive number
 const deposit= () => {
     while (true) {
         const depositAmount = prompt("Enter a deposit amount: ")
@@ -48,6 +45,8 @@ const deposit= () => {
     
 };
 
+
+//This function prompts the user to enter the number of lines they want to bet on and validates if it is a valid number within the range of 1-3.
 const getNumberOfLines= () => {
     while (true) {
         const lines= prompt("Enter the number of lines you want to bet on (1-3): ")
@@ -63,6 +62,8 @@ const getNumberOfLines= () => {
     
 };
 
+
+//This function prompts the user to enter the bet amount per line and validates if it is a valid positive number within the available balance.
 const getBet= (balance, lines) => {
     while (true) {
         const bet = prompt("Enter the bet per line ")
